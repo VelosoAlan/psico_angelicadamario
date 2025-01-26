@@ -1,0 +1,41 @@
+@import url("styles/header.css");
+@import url("styles/corpo.css");
+
+:root {
+    --cor-de-fundo: #EBECEE;
+    --creme: #dfd0af;
+    --branco: #FFFFFF;
+    --rosa: #e8acac;
+    --roxo: #a45785;
+    --roxo-escuro: #85586c;
+    --verde: #a1c0a1;
+    --fonte-principal: "Roboto";
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px; /* Distância da parte inferior */
+    right: 20px; /* Distância da lateral direita */
+    width: 60px; /* Tamanho do botão */
+    height: 60px;
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+    display: block; /* Permite que a imagem ocupe o espaço completo */
+    transition: transform 0.3s ease; /* Animação suave */
+  }
+  
+  .whatsapp-button:hover {
+    transform: scale(1.1); /* Amplia ligeiramente ao passar o mouse */
+  }
+  
+  .whatsapp-button img {
+    width: 100%; /* A imagem se ajusta ao tamanho do botão */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 20%; /* Torna o botão circular */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0); /* Adiciona sombra */
+  }
+  

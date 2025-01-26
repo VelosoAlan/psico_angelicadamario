@@ -1,0 +1,104 @@
+/* Estilo da seção de introdução */
+
+  .intro-section {
+    position: relative; /* Necessário para usar o ::before */
+    text-align: center; /* Centraliza o conteúdo */
+    padding: 2rem 1rem;
+    color: #fff; /* Texto branco para contraste */
+  }
+  
+  .intro-section::before {
+    content: ''; /* Cria a pseudocamada */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/Sala_Psico.jpg'); /* Caminho da imagem */
+    background-size: cover; /* Faz a imagem ocupar toda a área */
+    background-position: center; /* Centraliza a imagem */
+    opacity: 0.2; /* Define a opacidade da imagem */
+    z-index: -1; /* Coloca a camada atrás do conteúdo */
+  }
+  
+  .intro-section h1 {
+    font-size: 2rem; /* Tamanho do título */
+    font-weight: 700; /* Deixa o título em negrito */
+    margin-bottom: 1rem; /* Espaço abaixo do título */
+    color: var(--roxo-escuro); /* Destaque na cor do título */
+  }
+  
+  .intro-section p {
+    font-size: 1rem; /* Tamanho do texto do parágrafo */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    max-width: 600px; /* Limita a largura do texto */
+    margin: 0 auto; /* Centraliza o parágrafo */
+    color: #555; /* Cor de texto mais suave */
+  }
+
+  .chamada-button {
+    margin-top: 15px;
+    display: inline-flex; /* Para alinhar o texto e o ícone lado a lado */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    padding: 10px 20px; /* Espaçamento interno */
+    background-color: var(--roxo-escuro); /* Cor oficial do WhatsApp */
+    color: white; /* Texto e ícone brancos */
+    font-size: 16px; /* Tamanho do texto */
+    font-weight: bold; /* Negrito */
+    text-decoration: none; /* Remove sublinhado */
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Bordas levemente arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra no botão */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animações suaves */
+  }
+  
+  .chamada-button img {
+    margin-right: 20px; /* Espaço entre o ícone e o texto */
+    width: 20px; /* Tamanho do ícone */
+    height: auto;
+  }
+  
+  .chamada-button:hover {
+    background-color: #1da851; /* Cor mais escura ao passar o mouse */
+    transform: scale(1.03); /* Leve aumento ao passar o mouse */
+  }
+  
+  .foto-section {
+    text-align: center; /* Centraliza a imagem */
+    margin-top: 20px; /* Espaçamento entre o botão e a imagem */
+}
+
+.foto-psicologa {
+    max-width: 80%; /* Limita a largura da imagem a 80% da tela */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Bordas levemente arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.descricao-section {
+  margin-top: 20px; /* Espaçamento entre a foto e a descrição */
+  padding: 1rem; /* Espaçamento interno para melhorar a legibilidade */
+  background-color: var(--creme); /* Fundo suave para destacar a seção */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  text-align: justify; /* Centraliza o texto */
+}
+
+.descricao-section h2 {
+  font-size: 1.5rem; /* Tamanho do subtítulo */
+  color: var(--roxo-escuro); /* Cor do subtítulo */
+  margin-bottom: 0.5rem; /* Espaço abaixo do subtítulo */
+  text-align: center;
+}
+
+.descricao-section p {
+  font-size: 1rem; /* Tamanho do texto */
+  color: #555; /* Cor do texto */
+  line-height: 1.6; /* Espaçamento entre linhas */
+  max-width: 600px; /* Limita a largura do texto */
+  margin: 0 auto; /* Centraliza o parágrafo */
+}
+
+
+  

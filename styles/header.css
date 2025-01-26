@@ -1,0 +1,101 @@
+
+
+.cabecalho {
+    background-color: var(--rosa);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: var(--roxo-escuro);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+  }
+
+.logo img {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+
+}
+    
+.menu-toggle {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #863d3d;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+  
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #863d3d;
+    border-radius: 5px;
+}
+  
+  /* Menu Lateral */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Começa fora da tela */
+    width: 70%; /* O menu ocupa 70% da largura */
+    height: 100%;
+    background-color: #545454;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    transition: all 0.3s ease; /* Animação suave */
+    z-index: 1000;
+}
+  
+.menu ul {
+    list-style: none;
+    margin-top: 2rem;
+}
+  
+.menu ul li {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+  
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+  
+.menu ul li a:hover {
+    text-decoration: underline;
+}
+  
+  /* Botão de fechar */
+.menu .close-menu {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 1rem;
+
+}
+
+.menu button {
+    font-size: 3rem;
+}
+  
+  /* Quando o menu está ativo */
+.menu.active {
+    right: 0; /* Traz o menu para dentro da tela */
+  }
