@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="40" cy="40" r="36" stroke="#6B46C1" stroke-width="4"/>
+    <!-- Coração esquerdo -->
+    <path d="M30 40C30 35 35 30 40 30C45 30 50 35 50 40C50 45 45 50 40 50C35 50 30 45 30 40Z" stroke="#6B46C1" stroke-width="3" fill="none"/>
+    <!-- Coração direito -->
+    <path d="M50 40C50 35 55 30 60 30C65 30 70 35 70 40C70 45 65 50 60 50C55 50 50 45 50 40Z" stroke="#6B46C1" stroke-width="3" fill="none"/>
+    <!-- Linha de conexão -->
+    <path d="M40 40L60 40" stroke="#6B46C1" stroke-width="3"/>
+</svg> 

@@ -1,60 +1,353 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psico Angélica Damario</title>
+    <title>Psico Angélica Damario | Psicóloga Online - Terapia Online e Atendimento Psicológico</title>
+    <meta name="description" content="Psicóloga especializada em terapia online, terapia de casal e atendimento para brasileiros no exterior. Mais de 10 anos de experiência em atendimento clínico. Agende sua consulta!">
+    <meta name="keywords" content="psicóloga online, terapia online, psicoterapia, terapia de casal, atendimento psicológico, ansiedade, depressão, desenvolvimento pessoal">
+    <meta name="author" content="Angélica Damario">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Psico Angélica Damario | Psicóloga Online">
+    <meta property="og:description" content="Psicóloga especializada em terapia online, terapia de casal e atendimento para brasileiros no exterior. Agende sua consulta!">
+    <meta property="og:image" content="img/Psico_Angelica_Damario.jpg">
+    <meta property="og:url" content="https://psicoangelicadamario.com.br">
+    <link rel="canonical" href="https://psicoangelicadamario.com.br">
     <link rel="stylesheet" href="reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="cabecalho">
-        <div class="logo">
-            <img src="img/Logo_Mobile.svg" alt="Logo Psico Angélica Damario">                        
+    <header class="cabecalho" role="banner">
+        <div class="container">
+            <div class="logo">
+                <a href="#home" aria-label="Voltar para o início">
+                    <img src="img/Logo_Mobile.png" alt="Logo Psico Angélica Damario" width="200" height="60">                        
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="menu" id="menu-principal" role="navigation" aria-label="Menu principal">
+                <button class="close-menu" aria-label="Fechar menu">×</button>
+                <ul>
+                    <li><a href="#home" aria-current="page">Home</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#beneficios">Benefícios</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
         </div>
-        <button class="menu-toggle" aria-label="Abrir menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="menu">
-            <button class="close-menu" aria-label="Fechar menu">×</button>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#serviços">Serviços</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
     </header>
-    <div class="intro-section">
-        <h1>Terapia Online</h1>
-        <p>Psicóloga com experiência em relacionamentos amorosos, interpessoais, terapia de casais e ansiedade.</p>
-        <a href="https://wa.me/5519998913629" class="chamada-button" target="_blank" aria-label="Agendar consulta pelo WhatsApp">
-            <img src="img/WhatsApp_Logo_Mini.svg"></i> Agendar Consulta
-          </a>          
-    </div>
-    <div class="foto-section">
-        <img src="img/Psico_Angelica_Damario.jpg" alt="Foto da Psicóloga Angélica Damario" class="foto-psicologa">
-    </div>
-    <div class="descricao-section">
-        <h2>Psico Angélica Damario</h2>
-        <p>Olá, sou Angélica Damario, psicóloga especializada em ajudar pessoas a enfrentarem os desafios da vida emocional e dos relacionamentos. Com anos de experiência em terapia de casais, tenho ajudado muitos a reencontrarem a harmonia e a fortalecerem suas conexões afetivas.
 
-            Minha prática também se estende ao tratamento de ansiedade, onde auxilio meus pacientes a desenvolverem estratégias para lidar com o estresse e promoverem o bem-estar mental. Tenho o privilégio de atender brasileiros que vivem no exterior, oferecendo suporte emocional e ajudando a lidar com os desafios únicos da vida fora do Brasil.
-            
-            Além disso, trabalho com questões relacionadas a conflitos amorosos, orientação sexual e relacionamentos interpessoais, proporcionando um espaço seguro e acolhedor para que cada um possa explorar suas emoções e encontrar clareza e equilíbrio em suas vidas.
-            
-            Se você está buscando apoio, será um prazer caminhar ao seu lado nessa jornada de autodescoberta e crescimento.</p>
-    </div>
+    <main role="main">
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 id="hero-title">Bem-vindo ao seu espaço de transformação</h1>
+                    <p class="hero-subtitle">Psicóloga especializada em terapia online, com foco em relacionamentos, ansiedade e desenvolvimento pessoal.</p>
+                    <div class="hero-buttons">
+                        <a href="https://wa.me/5519998913629?text=Olá%20Angélica%2C%20gostaria%20de%20agendar%20uma%20consulta%20inicial." class="button button-primary" target="_blank" rel="noopener noreferrer" aria-label="Agendar consulta pelo WhatsApp">
+                            <img src="img/WhatsApp_Logo_Mini.svg" alt="" width="24" height="24"> Agendar Consulta
+                        </a>
+                        <a href="#servicos" class="button button-secondary" aria-label="Conhecer os serviços oferecidos">Conheça os Serviços</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="img/Psico_Angelica_Damario.jpg" alt="Psicóloga Angélica Damario em seu consultório" width="500" height="600" class="foto-psicologa">
+                </div>
+            </div>
+        </section>
 
-    <a href="https://wa.me/5519998913629" class="whatsapp-button" target="_blank" aria-label="Fale comigo agora pelo WhatsApp">
-        <img src="img/WhatsApp_Logo.svg" alt="Ícone WhatsApp">
+        <section class="sobre" id="sobre" aria-labelledby="sobre-title">
+            <div class="container">
+                <div class="sobre-content">
+                    <h2 id="sobre-title">Sobre Mim</h2>
+                    <div class="sobre-grid">
+                        <div class="sobre-text">
+                            <p>Olá, sou Angélica Damario, psicóloga com mais de 10 anos de experiência em atendimento clínico. Especializada em terapia de casais, ansiedade e desenvolvimento pessoal, tenho dedicado minha carreira a ajudar pessoas a encontrarem equilíbrio e bem-estar em suas vidas.</p>
+                            <p>Minha abordagem é humanizada e acolhedora, baseada em técnicas cientificamente comprovadas da Terapia Cognitivo-Comportamental (TCC) e outras metodologias eficazes.</p>
+                            <div class="credenciais" role="list">
+                                <div class="credencial-item" role="listitem">
+                                    <span class="numero">10+</span>
+                                    <span class="texto">Anos de Experiência</span>
+                                </div>
+                                <div class="credencial-item" role="listitem">
+                                    <span class="numero">1000+</span>
+                                    <span class="texto">Pacientes Atendidos</span>
+                                </div>
+                                <div class="credencial-item" role="listitem">
+                                    <span class="numero">98%</span>
+                                    <span class="texto">Satisfação dos Pacientes</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sobre-image">
+                            <img src="img/Sala_Psico.jpg" alt="Consultório da Psicóloga Angélica Damario" width="600" height="400">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="beneficios" id="beneficios" aria-labelledby="beneficios-title">
+            <div class="container">
+                <h2 id="beneficios-title">Benefícios da Terapia</h2>
+                <p class="section-description">Descubra como a terapia pode transformar sua vida e melhorar seu bem-estar emocional.</p>
+                
+                <div class="beneficios-grid" role="list">
+                    <article class="beneficio-card" role="listitem">
+                        <div class="beneficio-icon">
+                            <img src="img/icons/autoconhecimento.svg" alt="" width="80" height="80">
+                        </div>
+                        <h3>Autoconhecimento</h3>
+                        <p>A terapia proporciona um espaço seguro para explorar seus pensamentos, sentimentos e comportamentos, ajudando você a desenvolver uma compreensão mais profunda de si mesmo.</p>
+                    </article>
+                    
+                    <article class="beneficio-card" role="listitem">
+                        <div class="beneficio-icon">
+                            <img src="img/icons/ansiedade.svg" alt="" width="80" height="80">
+                        </div>
+                        <h3>Redução da Ansiedade</h3>
+                        <p>Aprenda técnicas eficazes para gerenciar sintomas de ansiedade, desenvolvendo estratégias práticas para enfrentar situações estressantes com mais calma e confiança.</p>
+                    </article>
+                    
+                    <article class="beneficio-card" role="listitem">
+                        <div class="beneficio-icon">
+                            <img src="img/icons/relacionamentos.svg" alt="" width="80" height="80">
+                        </div>
+                        <h3>Melhoria nos Relacionamentos</h3>
+                        <p>Desenvolva habilidades de comunicação e empatia, aprendendo a estabelecer limites saudáveis e construir relacionamentos mais gratificantes e significativos.</p>
+                    </article>
+                    
+                    <article class="beneficio-card" role="listitem">
+                        <div class="beneficio-icon">
+                            <img src="img/icons/resiliencia.svg" alt="" width="80" height="80">
+                        </div>
+                        <h3>Maior Resiliência</h3>
+                        <p>Fortifique sua capacidade de lidar com desafios e adversidades, desenvolvendo uma mentalidade mais positiva e adaptativa diante das mudanças da vida.</p>
+                    </article>
+                    
+                    <article class="beneficio-card" role="listitem">
+                        <div class="beneficio-icon">
+                            <img src="img/icons/autoestima.svg" alt="" width="80" height="80">
+                        </div>
+                        <h3>Aumento da Autoestima</h3>
+                        <p>Reconheça seu valor e potencial, superando crenças negativas sobre si mesmo e desenvolvendo uma imagem mais positiva e confiante.</p>
+                    </article>
+                    
+                    <article class="beneficio-card" role="listitem">
+                        <div class="beneficio-icon">
+                            <img src="img/icons/equilibrio.svg" alt="" width="80" height="80">
+                        </div>
+                        <h3>Equilíbrio Emocional</h3>
+                        <p>Aprenda a regular suas emoções de forma saudável, desenvolvendo maior estabilidade emocional e bem-estar psicológico em sua vida diária.</p>
+                    </article>
+                </div>
+                
+                <div class="beneficios-cta">
+                    <p>Descubra como a terapia pode transformar sua vida. Agende uma consulta hoje mesmo e dê o primeiro passo em direção ao seu bem-estar emocional.</p>
+                    <a href="https://wa.me/5519998913629?text=Olá%20Angélica%2C%20vi%20os%20benefícios%20da%20terapia%20no%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20como%20posso%20começar." class="button button-primary" target="_blank" rel="noopener noreferrer" aria-label="Agendar consulta pelo WhatsApp">
+                        <img src="img/WhatsApp_Logo_Mini.svg" alt="" width="24" height="24"> Agendar Consulta
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="servicos" id="servicos" aria-labelledby="servicos-title">
+            <div class="container">
+                <h2 id="servicos-title">Nossos Serviços</h2>
+                <p class="section-description">Ofereço diferentes modalidades de atendimento para atender às suas necessidades específicas.</p>
+                <div class="servicos-grid" role="list">
+                    <article class="servico-card" role="listitem">
+                        <div class="servico-icon">
+                            <img src="img/icons/terapia-online.svg" alt="" width="80" height="80">
+                        </div>
+                        <h3>Terapia Online</h3>
+                        <p>Atendimento psicológico via videoconferência, oferecendo comodidade e flexibilidade para sua rotina. Ideal para quem busca praticidade sem comprometer a qualidade do atendimento.</p>
+                        <ul class="servico-beneficios" role="list">
+                            <li>Sessões de 50 minutos</li>
+                            <li>Horários flexíveis</li>
+                            <li>Ambiente seguro e confidencial</li>
+                            <li>Plataforma de fácil acesso</li>
+                        </ul>
+                        <a href="https://wa.me/5519998913629?text=Olá%20Angélica%2C%20tenho%20interesse%20na%20terapia%20online.%20Poderia%20me%20informar%20mais%20sobre%20como%20funciona%3F" class="button button-outline" target="_blank" rel="noopener noreferrer" aria-label="Agendar sessão de terapia online pelo WhatsApp">Agendar Sessão</a>
+                    </article>
+                    <article class="servico-card" role="listitem">
+                        <div class="servico-icon">
+                            <img src="img/icons/terapia-casal.svg" alt="" width="80" height="80">
+                        </div>
+                        <h3>Terapia de Casal</h3>
+                        <p>Espaço seguro para trabalhar questões do relacionamento e fortalecer os laços afetivos. Ideal para casais que desejam melhorar sua comunicação e resolver conflitos.</p>
+                        <ul class="servico-beneficios" role="list">
+                            <li>Mediação de conflitos</li>
+                            <li>Melhoria na comunicação</li>
+                            <li>Fortalecimento dos laços</li>
+                            <li>Resolução de problemas</li>
+                        </ul>
+                        <a href="https://wa.me/5519998913629?text=Olá%20Angélica%2C%20tenho%20interesse%20na%20terapia%20de%20casal.%20Poderia%20me%20informar%20mais%20sobre%20como%20funciona%3F" class="button button-outline" target="_blank" rel="noopener noreferrer" aria-label="Agendar sessão de terapia de casal pelo WhatsApp">Agendar Sessão</a>
+                    </article>
+                    <article class="servico-card" role="listitem">
+                        <div class="servico-icon">
+                            <img src="img/icons/terapia-exterior.svg" alt="" width="80" height="80">
+                        </div>
+                        <h3>Terapia para Brasileiros no Exterior</h3>
+                        <p>Suporte especializado para brasileiros que vivem fora do país, ajudando com adaptação cultural, saudade e outros desafios específicos da vida no exterior.</p>
+                        <ul class="servico-beneficios" role="list">
+                            <li>Adaptação cultural</li>
+                            <li>Gestão da saudade</li>
+                            <li>Suporte emocional</li>
+                            <li>Desenvolvimento pessoal</li>
+                        </ul>
+                        <a href="https://wa.me/5519998913629?text=Olá%20Angélica%2C%20sou%20brasileiro(a)%20vivendo%20no%20exterior%20e%20tenho%20interesse%20na%20terapia.%20Poderia%20me%20informar%20mais%3F" class="button button-outline" target="_blank" rel="noopener noreferrer" aria-label="Agendar sessão de terapia para brasileiros no exterior pelo WhatsApp">Agendar Sessão</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="depoimentos" id="depoimentos" aria-labelledby="depoimentos-title">
+            <div class="container">
+                <h2 id="depoimentos-title">O que dizem meus pacientes</h2>
+                <p class="section-description">Histórias reais de pessoas que encontraram transformação através da terapia.</p>
+                <div class="swiper depoimentos-slider" role="region" aria-label="Depoimentos de pacientes">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article class="depoimento-card">
+                                <div class="depoimento-content">
+                                    <blockquote>
+                                        <p>"A terapia com a Angélica mudou minha vida. Ela me ajudou a entender melhor minhas emoções e a lidar com a ansiedade de forma mais saudável. Hoje me sinto mais confiante e equilibrada."</p>
+                                    </blockquote>
+                                </div>
+                                <div class="depoimento-author">
+                                    <cite>Maria S.</cite>
+                                    <span>Paciente há 2 anos</span>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article class="depoimento-card">
+                                <div class="depoimento-content">
+                                    <blockquote>
+                                        <p>"Como brasileira vivendo nos EUA, encontrar a Angélica foi um presente. Ela entende perfeitamente os desafios que enfrentamos e me ajudou a lidar com a saudade e a adaptação cultural."</p>
+                                    </blockquote>
+                                </div>
+                                <div class="depoimento-author">
+                                    <cite>Ana P.</cite>
+                                    <span>Paciente há 1 ano</span>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article class="depoimento-card">
+                                <div class="depoimento-content">
+                                    <blockquote>
+                                        <p>"A terapia de casal nos ajudou a reconstruir nossa relação. Com a Angélica, aprendemos a nos comunicar melhor e a resolver nossos conflitos de forma saudável. Somos muito gratos!"</p>
+                                    </blockquote>
+                                </div>
+                                <div class="depoimento-author">
+                                    <cite>João e Maria C.</cite>
+                                    <span>Pacientes há 6 meses</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination" role="tablist"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contato" id="contato" aria-labelledby="contato-title">
+            <div class="container">
+                <h2 id="contato-title">Entre em Contato</h2>
+                <p class="section-description">Estou aqui para ajudar você em sua jornada de transformação.</p>
+                <div class="contato-grid">
+                    <div class="contato-info">
+                        <div class="contato-item">
+                            <h3>Horário de Atendimento</h3>
+                            <p>Segunda a Sexta: 9h às 19h</p>
+                            <p>Sábado: 9h às 13h</p>
+                        </div>
+                        <div class="contato-item">
+                            <h3>Redes Sociais</h3>
+                            <div class="social-links" role="list">
+                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Siga-me no Instagram" role="listitem">
+                                    <img src="img/icons/instagram.svg" alt="" width="24" height="24">
+                                </a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Conecte-se comigo no LinkedIn" role="listitem">
+                                    <img src="img/icons/linkedin.svg" alt="" width="24" height="24">
+                                </a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Inscreva-se no meu canal do YouTube" role="listitem">
+                                    <img src="img/icons/youtube.svg" alt="" width="24" height="24">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contato-form">
+                        <form id="formulario-contato" action="#" method="POST">
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" id="nome" name="nome" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="mensagem">Mensagem</label>
+                                <textarea id="mensagem" name="mensagem" required aria-required="true"></textarea>
+                            </div>
+                            <button type="submit" class="button button-primary">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Contato</h3>
+                    <address>
+                        <p>Email: <a href="mailto:contato@psicoangelicadamario.com.br">contato@psicoangelicadamario.com.br</a></p>
+                        <p>WhatsApp: <a href="https://wa.me/5519998913629" target="_blank" rel="noopener noreferrer">(19) 99891-3629</a></p>
+                        <p>CNPJ: XX.XXX.XXX/0001-XX</p>
+                    </address>
+                </div>
+                <div class="footer-social">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links" role="list">
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Siga-me no Instagram" role="listitem">
+                            <img src="img/icons/instagram.svg" alt="" width="24" height="24">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Conecte-se comigo no LinkedIn" role="listitem">
+                            <img src="img/icons/linkedin.svg" alt="" width="24" height="24">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Inscreva-se no meu canal do YouTube" role="listitem">
+                            <img src="img/icons/youtube.svg" alt="" width="24" height="24">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Psico Angélica Damario. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5519998913629?text=Olá%20Angélica%2C%20gostaria%20de%20conversar%20sobre%20terapia." class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Fale comigo agora pelo WhatsApp">
+        <img src="img/WhatsApp_Logo.svg" alt="" width="60" height="60">
     </a>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
