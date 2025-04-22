@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const closeMenu = document.querySelector('.close-menu');
     const nav = document.querySelector('nav');
-    const menuItems = document.querySelectorAll('.menu-item a');
+    const menuItems = document.querySelectorAll('nav ul li a');
 
     // Toggle menu
     menuToggle.addEventListener('click', function() {
