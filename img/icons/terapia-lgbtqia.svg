@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Círculo de fundo -->
+    <circle cx="40" cy="40" r="36" stroke="#6B46C1" stroke-width="4"/>
+    
+    <!-- Arco-íris estilizado -->
+    <path d="M25 40C25 31.72 31.72 25 40 25C48.28 25 55 31.72 55 40" stroke="#E8B4BC" stroke-width="4" stroke-linecap="round"/>
+    <path d="M30 40C30 34.48 34.48 30 40 30C45.52 30 50 34.48 50 40" stroke="#9B7BA3" stroke-width="4" stroke-linecap="round"/>
+    <path d="M35 40C35 37.24 37.24 35 40 35C42.76 35 45 37.24 45 40" stroke="#6B46C1" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- Símbolo de igualdade -->
+    <rect x="35" y="35" width="10" height="3" rx="1.5" fill="white"/>
+    <rect x="35" y="42" width="10" height="3" rx="1.5" fill="white"/>
+</svg> 

@@ -21,9 +21,32 @@ const swiper = new Swiper('.depoimentos-slider', {
     },
 });
 
+// Initialize Serviços Swiper
+const servicosSwiper = new Swiper('.servicos-slider', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+        delay: 6000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 2,
+        },
+    },
+});
+
 // Menu Mobile
 document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
+const menuToggle = document.querySelector('.menu-toggle');
     const closeMenu = document.querySelector('.close-menu');
     const nav = document.querySelector('nav');
     const menuItems = document.querySelectorAll('nav ul li a');
@@ -361,24 +384,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Personalizar mensagens com base em interações do usuário
-    const serviceButtons = document.querySelectorAll('.servico-card .button-outline');
-    
+    const serviceButtons = document.querySelectorAll('.service-item .cta-button');
     serviceButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            // Não prevenir o comportamento padrão, apenas registrar a interação
-            const serviceType = this.closest('.servico-card').querySelector('h3').textContent;
-            
-            // Armazenar a preferência do usuário
-            localStorage.setItem('preferredService', serviceType);
-            
-            // Atualizar a mensagem do botão flutuante do WhatsApp
-            const floatingButton = document.querySelector('.whatsapp-button');
-            if (floatingButton) {
-                updateWhatsAppMessage(
-                    floatingButton, 
-                    `Olá Angélica, tenho interesse na ${serviceType}. Vi seu site e gostaria de saber mais sobre como funciona.`
-                );
-            }
+        button.addEventListener('click', (e) => {
+            const service = e.target.closest('.service-item').querySelector('h3').textContent;
+            const message = `Olá! Gostaria de saber mais sobre ${service}. Poderia me informar mais detalhes?`;
+            const whatsappLink = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+            e.target.href = whatsappLink;
         });
     });
 
@@ -409,5 +421,5 @@ document.addEventListener('DOMContentLoaded', function() {
         sections.forEach(section => {
             observer.observe(section);
         });
-    }
+  }
 });
