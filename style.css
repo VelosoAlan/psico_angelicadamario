@@ -362,93 +362,111 @@ p {
 
 /* Serviços Section */
 .servicos-slider {
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 2rem 0;
+    margin: 0 -1rem;
 }
 
 .servico-card {
     background-color: var(--branco);
-    padding: 2.5rem;
     border-radius: var(--borda-radius);
-    box-shadow: var(--sombra-padrao);
-    transition: var(--transicao-padrao);
+    padding: 2.5rem;
     height: 100%;
     display: flex;
     flex-direction: column;
+    box-shadow: var(--sombra-padrao);
+    transition: var(--transicao-padrao);
+    margin: 1rem;
 }
 
 .servico-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(107, 78, 113, 0.15);
 }
 
 .servico-icon {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .servico-icon img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: var(--transicao-padrao);
 }
 
 .servico-card h3 {
     text-align: center;
-    color: var(--roxo);
-    margin-bottom: 1.25rem;
-    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    margin-bottom: 1rem;
+    color: var(--roxo-escuro);
 }
 
 .servico-card p {
-    text-align: justify;
-    color: var(--cinza);
-    font-size: clamp(0.95rem, 1.5vw, 1rem);
-    line-height: 1.8;
+    text-align: center;
     margin-bottom: 1.5rem;
+    color: var(--cinza);
 }
 
 .servico-beneficios {
     list-style: none;
-    margin: 1.5rem 0;
-    flex-grow: 1;
+    margin: 0 0 1.5rem;
+    padding: 0;
 }
 
 .servico-beneficios li {
-    padding-left: 1.75rem;
     position: relative;
+    padding-left: 1.5rem;
     margin-bottom: 0.75rem;
-    font-size: clamp(0.95rem, 1.5vw, 1rem);
-    line-height: 1.6;
     color: var(--cinza);
 }
 
 .servico-beneficios li::before {
     content: "✓";
-    color: var(--roxo);
     position: absolute;
     left: 0;
+    color: var(--roxo);
     font-weight: bold;
 }
 
 .servico-card .button {
     margin-top: auto;
-    display: block;
     width: 100%;
     text-align: center;
-    align-self: flex-end;
 }
 
-/* Garantir que todos os cards tenham a mesma altura */
+/* Swiper Styles */
+.swiper {
+    width: 100%;
+    padding: 2rem 0;
+}
+
 .swiper-slide {
     height: auto;
     display: flex;
+    justify-content: center;
 }
 
-.swiper-slide article {
-    width: 100%;
+.swiper-pagination {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: var(--cinza-claro);
+    opacity: 1;
+    transition: var(--transicao-padrao);
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--roxo);
+    width: 20px;
+    border-radius: 5px;
 }
 
 /* Depoimentos Section */
@@ -640,7 +658,7 @@ p {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsividade */
+/* Media Queries */
 @media (max-width: 1024px) {
     .hero .container,
     .sobre-grid,
@@ -660,6 +678,14 @@ p {
 
     .credenciais {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .servicos-slider {
+        padding: 1rem 0;
+    }
+    
+    .servico-card {
+        padding: 2rem;
     }
 }
 
@@ -702,27 +728,36 @@ p {
     }
 
     .servicos-slider {
-        padding: 1rem 0;
+        padding: 0;
+        margin: 0;
     }
-
-    .depoimentos-slider {
-        padding: 1rem 0;
+    
+    .servico-card {
+        margin: 0 1rem;
+        padding: 1.5rem;
     }
-}
-
-/* Swiper Customization */
-.swiper-pagination-bullet {
-    background: var(--roxo-claro);
-    opacity: 0.5;
-    width: 10px;
-    height: 10px;
-    transition: var(--transicao-padrao);
-}
-
-.swiper-pagination-bullet-active {
-    background: var(--roxo);
-    opacity: 1;
-    transform: scale(1.2);
+    
+    .servico-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
+    }
+    
+    .servico-card h3 {
+        font-size: 1.25rem;
+    }
+    
+    .servico-card p {
+        font-size: 0.9rem;
+    }
+    
+    .servico-beneficios li {
+        font-size: 0.9rem;
+    }
+    
+    .swiper-pagination {
+        margin-top: 1.5rem;
+    }
 }
 
 /* Acessibilidade */

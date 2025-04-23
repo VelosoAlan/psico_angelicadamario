@@ -21,13 +21,13 @@ const swiper = new Swiper('.depoimentos-slider', {
     },
 });
 
-// Initialize Serviços Swiper
+// Initialize Swiper for Serviços
 const servicosSwiper = new Swiper('.servicos-slider', {
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
     autoplay: {
-        delay: 6000,
+        delay: 5000,
         disableOnInteraction: false,
     },
     pagination: {
@@ -35,13 +35,34 @@ const servicosSwiper = new Swiper('.servicos-slider', {
         clickable: true,
     },
     breakpoints: {
+        640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
         768: {
             slidesPerView: 2,
+            spaceBetween: 30,
         },
         1024: {
             slidesPerView: 2,
-        },
+            spaceBetween: 40,
+        }
     },
+    a11y: {
+        prevSlideMessage: 'Slide anterior',
+        nextSlideMessage: 'Próximo slide',
+        paginationBulletMessage: 'Ir para o slide {{index}}',
+    },
+    on: {
+        init: function() {
+            // Ajustar altura dos slides após a inicialização
+            this.update();
+        },
+        resize: function() {
+            // Ajustar altura dos slides após redimensionamento
+            this.update();
+        }
+    }
 });
 
 // Menu Mobile
