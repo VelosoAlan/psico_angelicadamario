@@ -62,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: clamp(2.2rem, 4.5vw, 3rem);
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
     padding: 1rem 0;
     letter-spacing: -0.02em;
 }
@@ -641,8 +641,8 @@ p {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     z-index: 1000;
     transition: var(--transicao-padrao);
   }
@@ -757,6 +757,11 @@ p {
     
     .swiper-pagination {
         margin-top: 1.5rem;
+    }
+
+    .whatsapp-button {
+        width: 60px;
+        height: 60px;
     }
 }
 
