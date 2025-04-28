@@ -444,3 +444,44 @@ document.addEventListener('DOMContentLoaded', function() {
         });
   }
 });
+
+// Inicialização do EmailJS
+(function() {
+    emailjs.init("SEU_USER_ID"); // Substitua pelo seu User ID do EmailJS
+})();
+
+// Função para enviar o email
+function sendEmail(e) {
+    e.preventDefault();
+    
+    // Mostrar indicador de carregamento
+    const button = document.querySelector('#contact-form button');
+    const originalText = button.textContent;
+    button.textContent = 'Enviando...';
+    button.disabled = true;
+
+    // Preparar os dados do formulário
+    const templateParams = {
+        from_name: document.getElementById('nome').value,
+        from_email: document.getElementById('email').value,
+        message: document.getElementById('mensagem').value,
+    };
+
+    // Enviar o email
+    emailjs.send('SEU_SERVICE_ID', 'SEU_TEMPLATE_ID', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            document.getElementById('contact-form').reset();
+        }, function(error) {
+            console.log('FAILED...', error);
+            alert('Desculpe, houve um erro ao enviar sua mensagem. Por favor, tente novamente.');
+        })
+        .finally(function() {
+            // Restaurar o botão
+            button.textContent = originalText;
+            button.disabled = false;
+        });
+
+    return false;
+}

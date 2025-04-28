@@ -223,10 +223,15 @@ p {
 .hero-image {
     position: relative;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-image img {
     width: 100%;
+    max-width: 500px;
+    height: auto;
     border-radius: var(--borda-radius);
     box-shadow: var(--sombra-padrao);
     transition: var(--transicao-padrao);
@@ -708,6 +713,11 @@ p {
         justify-content: center;
     }
 
+    .hero-image {
+        margin: 2rem auto;
+        max-width: 400px;
+    }
+
     .credenciais {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -743,6 +753,11 @@ p {
 
     .hero-buttons .button {
         width: 100%;
+    }
+
+    .hero-image {
+        margin: 1.5rem auto;
+        max-width: 300px;
     }
 
     .credenciais {
@@ -855,5 +870,5 @@ p {
         width: 40px !important;
         height: 40px !important;
     }
-}
+  }
   
