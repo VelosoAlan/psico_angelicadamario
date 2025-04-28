@@ -872,3 +872,11 @@ p {
     }
   }
   
+#hero-title {
+    margin-top: 2rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--roxo-escuro);
+}
+  
