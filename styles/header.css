@@ -20,13 +20,13 @@
 .logo {
     display: flex;
     align-items: center;
-}
+  }
 
 .logo img {
     max-height: 70px;
     width: auto;
 }
-
+    
 .menu-toggle {
     display: none; /* Esconde o botão do menu por padrão */
     font-size: 1.5rem;
@@ -37,7 +37,7 @@
     flex-direction: column;
     gap: 0.3rem;
 }
-
+  
 .menu-toggle span {
     display: block;
     width: 25px;
@@ -45,13 +45,13 @@
     background-color: var(--branco);
     border-radius: 5px;
 }
-
+  
 /* Menu de navegação */
 .menu {
     display: flex;
     align-items: center;
 }
-
+  
 .menu ul {
     display: flex;
     list-style: none;
@@ -59,18 +59,18 @@
     margin: 0;
     padding: 0;
 }
-
+  
 .menu ul li a {
     color: var(--branco);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
-
+  
 .menu ul li a:hover {
     color: var(--rosa);
 }
-
+  
 /* Botão de fechar (visível apenas em mobile) */
 .menu .close-menu {
     display: none;
@@ -115,11 +115,11 @@
 
     .menu .close-menu {
         display: block;
-        align-self: flex-end;
-        background: none;
-        border: none;
+    align-self: flex-end;
+    background: none;
+    border: none;
         color: var(--branco);
         font-size: 2rem;
-        cursor: pointer;
+    cursor: pointer;
     }
-}
+  }

@@ -26,10 +26,6 @@ const servicosSwiper = new Swiper('.servicos-slider', {
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-    },
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -44,9 +40,13 @@ const servicosSwiper = new Swiper('.servicos-slider', {
             spaceBetween: 30,
         },
         1024: {
-            slidesPerView: 2,
-            spaceBetween: 40,
-        }
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+    },
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
     },
     a11y: {
         prevSlideMessage: 'Slide anterior',
@@ -63,6 +63,41 @@ const servicosSwiper = new Swiper('.servicos-slider', {
             this.update();
         }
     }
+});
+
+// Inicialização dos Sliders
+const servicosSlider = new Swiper('.servicos-slider', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+    },
+});
+
+const beneficiosSlider = new Swiper('.beneficios-slider', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+    },
 });
 
 // Menu Mobile
@@ -129,37 +164,67 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form validation
+// Proteção contra spam
 const form = document.querySelector('form');
 if (form) {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const name = form.querySelector('[name="name"]').value;
-        const email = form.querySelector('[name="email"]').value;
-        const message = form.querySelector('[name="message"]').value;
+        // Verificação de tempo mínimo de preenchimento (5 segundos)
+        const startTime = parseInt(localStorage.getItem('formStartTime') || '0');
+        const currentTime = Date.now();
+        const timeSpent = (currentTime - startTime) / 1000;
         
-        if (!name || !email || !message) {
-            alert('Por favor, preencha todos os campos.');
+        if (timeSpent < 5) {
+            alert('Por favor, preencha o formulário com mais cuidado.');
             return;
         }
         
-        if (!isValidEmail(email)) {
-            alert('Por favor, insira um email válido.');
+        // Verificação de campos ocultos (honeypot)
+        const honeypot = form.querySelector('#website');
+        if (honeypot && honeypot.value !== '') {
+            return; // Bot detectado
+        }
+        
+        // Verificação de padrões de spam
+        const message = form.querySelector('textarea').value;
+        if (message.includes('http://') || message.includes('https://') || 
+            message.includes('www.') || message.includes('.com')) {
+            alert('Por favor, não inclua links no seu mensagem.');
             return;
         }
         
-        // Here you would typically send the form data to your server
-        console.log('Form submitted:', { name, email, message });
-        alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-        form.reset();
+        // Limite de caracteres
+        if (message.length > 1000) {
+            alert('A mensagem excede o limite de caracteres permitido.');
+            return;
+        }
+        
+        // Se passar por todas as verificações, envia o formulário
+        form.submit();
     });
+    
+    // Armazena o tempo de início do preenchimento
+    form.addEventListener('focus', function() {
+        if (!localStorage.getItem('formStartTime')) {
+            localStorage.setItem('formStartTime', Date.now().toString());
+        }
+    }, true);
 }
 
-function isValidEmail(email) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
+// Adiciona campo honeypot ao formulário
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    if (form) {
+        const honeypot = document.createElement('div');
+        honeypot.style.display = 'none';
+        honeypot.innerHTML = `
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        `;
+        form.appendChild(honeypot);
+    }
+});
 
 // Lazy loading images
 document.addEventListener('DOMContentLoaded', function() {
@@ -395,93 +460,9 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Personalização de mensagens do WhatsApp
-document.addEventListener('DOMContentLoaded', function() {
-    // Função para atualizar a mensagem do WhatsApp
-    function updateWhatsAppMessage(button, message) {
-        const whatsappNumber = '5519998913629';
-        const encodedMessage = encodeURIComponent(message);
-        button.href = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-    }
-
-    // Personalizar mensagens com base em interações do usuário
-    const serviceButtons = document.querySelectorAll('.service-item .cta-button');
-    serviceButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            const service = e.target.closest('.service-item').querySelector('h3').textContent;
-            const message = `Olá! Gostaria de saber mais sobre ${service}. Poderia me informar mais detalhes?`;
-            const whatsappLink = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
-            e.target.href = whatsappLink;
-        });
-    });
-
-    // Personalizar mensagem com base na seção visualizada
-    const sections = document.querySelectorAll('section[id]');
-    const floatingButton = document.querySelector('.whatsapp-button');
-    
-    if (floatingButton) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const sectionId = entry.target.id;
-                    const preferredService = localStorage.getItem('preferredService');
-                    
-                    let message = 'Olá Angélica, gostaria de conversar sobre terapia.';
-                    
-                    if (sectionId === 'beneficios') {
-                        message = 'Olá Angélica, vi os benefícios da terapia no seu site e gostaria de saber mais.';
-                    } else if (sectionId === 'servicos' && preferredService) {
-                        message = `Olá Angélica, tenho interesse na ${preferredService}. Poderia me informar mais?`;
-                    }
-                    
-                    updateWhatsAppMessage(floatingButton, message);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-  }
-});
-
-// Inicialização do EmailJS
-(function() {
-    emailjs.init("SEU_USER_ID"); // Substitua pelo seu User ID do EmailJS
-})();
-
-// Função para enviar o email
-function sendEmail(e) {
-    e.preventDefault();
-    
-    // Mostrar indicador de carregamento
-    const button = document.querySelector('#contact-form button');
-    const originalText = button.textContent;
-    button.textContent = 'Enviando...';
-    button.disabled = true;
-
-    // Preparar os dados do formulário
-    const templateParams = {
-        from_name: document.getElementById('nome').value,
-        from_email: document.getElementById('email').value,
-        message: document.getElementById('mensagem').value,
-    };
-
-    // Enviar o email
-    emailjs.send('SEU_SERVICE_ID', 'SEU_TEMPLATE_ID', templateParams)
-        .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-            document.getElementById('contact-form').reset();
-        }, function(error) {
-            console.log('FAILED...', error);
-            alert('Desculpe, houve um erro ao enviar sua mensagem. Por favor, tente novamente.');
-        })
-        .finally(function() {
-            // Restaurar o botão
-            button.textContent = originalText;
-            button.disabled = false;
-        });
-
-    return false;
+// WhatsApp Button
+function updateWhatsAppMessage(button, message) {
+    const whatsappNumber = '5511999999999'; // Substitua pelo seu número
+    const encodedMessage = encodeURIComponent(message);
+    button.href = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 }
